@@ -2,6 +2,7 @@ package css.cis3334.heartratetracker;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,12 +47,17 @@ public class HeartRateAdapter  extends ArrayAdapter<HeartRate> {
         TextView tvPulse=(TextView)view.findViewById(R.id.textViewPulse);
         tvPulse.setText(hr.getPulse().toString());
 
-        TextView tvAerobic=(TextView)view.findViewById(R.id.textViewRangeName);
+        TextView tvRange=(TextView)view.findViewById(R.id.textViewRangeName);
         tvPulse.setText(hr.getRangeName().toString());
 
         TextView tvDescription=(TextView)view.findViewById(R.id.textViewDescription);
         tvPulse.setText(hr.getRangeDescrtiption().toString());
 
+        if(true){
+            tvPulse.setTextColor(ContextCompat.getColor(context, R.color.colorZone1));
+            tvRange.setTextColor(ContextCompat.getColor(context, R.color.colorZone2));
+            tvDescription.setTextColor(ContextCompat.getColor(context, R.color.colorZone3));
+        }
         return(view);
     }
 }
