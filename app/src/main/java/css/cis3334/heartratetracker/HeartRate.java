@@ -73,4 +73,6 @@ public class HeartRate {
     public String toString() {
         return "HeartRate = " + pulse + " - " + getRangeName();
     }
+
+
 }
